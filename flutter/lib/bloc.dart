@@ -1,5 +1,6 @@
-import 'package:docker_api_sample/repositary.dart';
-import 'package:docker_api_sample/user.dart';
+
+import 'package:docker_study/repository.dart';
+import 'package:docker_study/user.dart';
 
 import 'item.dart';
 import 'package:rxdart/rxdart.dart';

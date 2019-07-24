@@ -1,7 +1,7 @@
 import 'dart:convert';
 
-import 'package:docker_api_sample/repository.dart';
-import 'package:docker_api_sample/user.dart';
+import 'package:docker_study/repository.dart';
+import 'package:docker_study/user.dart';
 import 'package:http/http.dart';
 import 'item.dart';
 import 'package:http/http.dart' as http;
@@ -15,7 +15,7 @@ class Api implements Source {
     var url = base_url + '/user';
 
     try {
-      Response response = await client.post(url, body: user.tojson());
+      Response response = await client.post(url, body: user.toJson());
       // print(response.body);
 
       if(response.statusCode == 500) {

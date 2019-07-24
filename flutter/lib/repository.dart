@@ -1,4 +1,3 @@
-import 'package:docker_api_sample/user.dart';
 import 'package:docker_study/user.dart';
 
 import 'api.dart';

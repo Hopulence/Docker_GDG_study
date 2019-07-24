@@ -1,3 +1,4 @@
+import 'package:docker_study/main.dart';
 import 'package:flutter/material.dart';
 
 import 'bloc.dart';
@@ -5,7 +6,7 @@ import 'bloc.dart';
 class Provider extends InheritedWidget {
   final Bloc bloc = Bloc();
 
-  Provider(Key key, Widget child) : super(key: key, child: child);
+  Provider({Key key, Widget child}) : super(key: key, child: child);
 
   @override
   bool updateShouldNotify(InheritedWidget oldWidget) {

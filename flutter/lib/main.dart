@@ -1,8 +1,9 @@
+import 'package:docker_study/provider.dart';
+import 'package:docker_study/user.dart';
 import 'package:flutter/material.dart';
-import 'package:docker_api_sample/provider.dart';
-import 'package:docker_api_sample/user.dart';
 
-import 'item.dart'
+
+import 'item.dart';
 
 void main() => runApp(Provider(
   child: MyApp(),
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter App',
       theme: ThemeData(
-        primarySwitch: Colors.blue,
+        primarySwatch: Colors.blue,
       ),
       home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
@@ -36,7 +37,7 @@ class _MyHomePageState extends State<MyHomePage> {
   final _bodyController = new TextEditingController();
 
   @override
-  Widget build(Buildcontext context) {
+  Widget build(BuildContext context) {
     final bloc = Provider.of(context).bloc;
 
     addUser() {
@@ -52,7 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: <Widget>[
-            TextFeild(
+            TextField(
               controller: _titleController,
             ),
             TextField(
@@ -76,11 +77,12 @@ class _MyHomePageState extends State<MyHomePage> {
             Container(
               height: 300,
               child: StreamBuilder(
-                stream: bloc.user,
+                stream: bloc.users,
                 builder: (context, AsyncSnapshot<List<User>> snapshot) {
                   final users = snapshot.data ?? [];
+                  var user;
                   return ListView.builder(
-                    shrinkWrap: treu,
+                    shrinkWrap: true,
                     itemCount: user.length,
                     itemBuilder: (context, index) => Text(users[index].id),
                   );
@@ -92,4 +94,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
     );
   }
+}
+
+class TextFeild {
 }
